@@ -14,7 +14,7 @@ type City = {
 
 async function searchCities(query: string): Promise<City[]> {
   const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
-  const limit = 5
+  const limit = 10
   const url = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(
     query
   )}&limit=${limit}&appid=${apiKey}`
