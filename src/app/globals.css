@@ -16,13 +16,39 @@
 
 body {
 	background-color: var(--bg-color);
-	width: 1280px;
+	max-width: 1280px;
+	width: 100%;
 	margin: 0 auto;
 	font-family: 'Rubik', sans-serif;
 	overflow-x: hidden;
 }
 
+html,
+body {
+	margin: 0 auto;
+	padding: 0;
+	overflow-x: hidden;
+	height: 100%;
+	box-sizing: border-box;
+}
 
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+	/* ← заставляет контент растягиваться */
+	display: flex;
+	flex-direction: column;
+}
 
 
 /**

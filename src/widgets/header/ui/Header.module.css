@@ -3,22 +3,42 @@
 	overflow: hidden;
 	display: flex;
 	align-items: center;
+	padding: 0 24px;
 }
 
 .logoWrapper {
-	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 0 15px;
+	width: 100%;
+}
+
+.logoBlock,
+.titleBlock,
+.toggleBlock {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.logoBlock {
+	justify-content: flex-start;
+	gap: 8px;
+}
+
+.titleBlock {
+	justify-content: center;
+}
+
+.toggleBlock {
+	justify-content: flex-end;
 }
 
 .logo {
-	height: 100px;
-	width: 100px;
+	height: 80px;
+	width: 80px;
 	object-fit: contain;
 }
-
 
 .light {
 	display: block;
@@ -28,7 +48,6 @@
 	display: none;
 }
 
-
 [data-theme='dark'] .light {
 	display: none;
 }
@@ -37,20 +56,15 @@
 	display: block;
 }
 
-.header a {
+.titleBlock a {
 	color: var(--text-color);
-	font-size: 48px;
-	font-weight: 400;
+	font-size: 36px;
+	font-weight: 500;
 	text-decoration: none;
 	user-select: none;
-	transition: opacity 0.4s ease;
+	transition: opacity 0.3s ease;
 }
 
-.header a:hover {
-	opacity: 0.6
-}
-
-.header>div {
-	color: var(--text-color);
-	font-size: 24px;
+.titleBlock a:hover {
+	opacity: 0.7;
 }
