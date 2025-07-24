@@ -1,0 +1,2 @@
+NEXT_PUBLIC_OPENWEATHER_API_KEY=your_api_key_here
+создай свой файл в корне проекта с названием .env.local и добавь свой api ключ
