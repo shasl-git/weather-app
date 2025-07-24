@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Русский язык
 
-## Getting Started
+## Projects — приложение на Next.js
 
-First, run the development server:
+Этот проект создан с помощью [Next.js](https://nextjs.org/), используя `create-next-app`.
+
+---
+
+## 🚀 Начало работы
+
+Сначала запустите сервер разработки:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i          # Установка зависимостей
+npm run dev    # Запуск сервера разработки
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Затем откройте http://localhost:3000 в браузере, чтобы увидеть результат.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Вы можете начать редактировать страницу, изменяя файл `app/page.tsx`. Страница будет автоматически обновляться при сохранении.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📚 О проекте
 
-## Learn More
+Проект использует [OpenWeatherMap API](https://openweathermap.org/api) для поиска городов и отображения информации о погоде.
 
-To learn more about Next.js, take a look at the following resources:
+Для работы необходим собственный API-ключ.  
+Создайте файл `api.txt` в корне проекта. Пример находится в `example_api.txt`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Получить свой ключ можно на сайте [https://openweathermap.org/api](https://openweathermap.org/api)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Поиск и отображение погоды происходит на стороне клиента.
 
-## Deploy on Vercel
+Структура проекта организована по принципам **Feature-Sliced Design (FSD)** — модульный подход к архитектуре, который делит приложение на логические слои: `entities`, `features`, `widgets`, `shared`, `pages`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Для стилизации применяются **CSS-модули**, что обеспечивает локальность и модульность стилей.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Используется инструмент автоматического форматирования кода — **Prettier**.
+
+Реализована **адаптивная вёрстка** под мобильные устройства.
+
+## 🛠️ Используемые технологии
+
+- Next.js 15 (App Router)
+- TypeScript
+- CSS Modules
+- Архитектура FSD
+- Prettier
+- REST API
+
+## 📁 Структура проекта
+
+- /app
+- /entities
+- /features
+- /shared
+- /widgets
+- /pages
+- /public
