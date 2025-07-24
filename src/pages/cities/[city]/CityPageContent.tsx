@@ -4,6 +4,7 @@ import { useParams, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { fetchWeatherByCoords } from '@/features/get-city-weather/api/fetchWeatherByCoords'
 import { WeatherInfo } from '@/entities/city-weather/ui/WeatherInfo'
+import styles from './CityPageContent.module.css'
 
 type WeatherData = {
   weather: { description: string; icon: string }[]
@@ -12,12 +13,12 @@ type WeatherData = {
 }
 
 export default function CityPageContent() {
-  const params = useParams()
-  const searchParams = useSearchParams()
+  const params = useParams()!
+  const searchParams = useSearchParams()!
 
-  const city = decodeURIComponent(useParams()!.city as string)
-  const lat = useSearchParams()!.get('lat')
-  const lon = useSearchParams()!.get('lon')
+  const city = decodeURIComponent(params.city as string)
+  const lat = searchParams.get('lat')
+  const lon = searchParams.get('lon')
 
   const [weather, setWeather] = useState<WeatherData | null>(null)
   const [loading, setLoading] = useState(false)
@@ -36,11 +37,11 @@ export default function CityPageContent() {
   }, [lat, lon])
 
   return (
-    <main>
-      <h1>Погода в городе: {city}</h1>
+    <main className={styles.main}>
+      <h1 className={styles.title}>Погода в городе: {city}</h1>
 
-      {loading && <p>Загрузка погоды...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {loading && <p className={styles.message}>Загрузка погоды...</p>}
+      {error && <p className={styles.error}>{error}</p>}
       {weather && <WeatherInfo data={weather} />}
     </main>
   )

@@ -1,0 +1,52 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.item {
+  background-color: var(--header-bg);
+  border-radius: 8px;
+  padding: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.item:hover {
+  background-color: var(--button-color);
+  transform: translateY(-2px);
+}
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+  gap: 12px;
+  flex-wrap: wrap;
+  transition: color 0.3s;
+}
+
+.item:hover .link {
+  color: var(--button-text-color);
+}
+
+.cityName {
+  flex-grow: 1;
+}
+
+.coords {
+  font-size: 14px;
+  color: var(--text-color);
+  opacity: 0.7;
+  transition: color 0.3s;
+}
+
+.item:hover .coords {
+  color: var(--button-text-color);
+  opacity: 0.7;
+}

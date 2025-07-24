@@ -5,3 +5,10 @@
 	background-color: var(--button-color);
 	color: var(--button-text-color)
 }
+
+@media (max-width: 768px) {
+	.button {
+	padding: 5px 20px;
+	border-radius: 7px;
+}
+}

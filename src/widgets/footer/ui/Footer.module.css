@@ -40,3 +40,17 @@
 [data-theme='dark'] .icons img {
 	filter: brightness(0) invert(1);
 }
+
+@media (max-width: 768px) {
+	.contacts a {
+		margin: 4px 0;
+		font-size: 15px;
+	}
+	.icons img {
+		width: 30px;
+		height: 30px;
+	}
+	.icons {
+	gap: 10px;
+}
+}

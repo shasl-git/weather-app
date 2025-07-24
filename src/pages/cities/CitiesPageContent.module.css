@@ -1,0 +1,38 @@
+.main {
+  padding: 32px 16px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--text-color);
+}
+
+.heading {
+  font-size: 48px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.loading {
+  color: gray;
+  text-align: center;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+.empty {
+  color: var(--text-color);
+  text-align: center;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 28px;
+  }
+}

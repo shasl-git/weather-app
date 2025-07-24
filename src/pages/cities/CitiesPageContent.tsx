@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { searchCities } from '@/features/search-city/api/searchCities'
 import { SearchForm } from '@/features/search-city/ui/SearchForm'
 import { CityList } from '@/widgets/city-list/CityList'
+import styles from './CitiesPageContent.module.css'
 
 type City = {
   name: string
@@ -16,7 +17,7 @@ type City = {
 
 export default function CitiesPageContent() {
   const searchParams = useSearchParams()
-  const query = searchParams.get('q') || ''
+  const query = (searchParams as URLSearchParams).get('q') || ''
 
   const [cities, setCities] = useState<City[]>([])
   const [loading, setLoading] = useState(false)
@@ -38,12 +39,12 @@ export default function CitiesPageContent() {
   }, [query])
 
   return (
-    <main>
-      <h1>Список городов</h1>
+    <main className={styles.main}>
+      <h1 className={styles.heading}>Список городов</h1>
       <SearchForm />
-      {loading && <p>Загрузка...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {!loading && !cities.length && query && <p>Города не найдены</p>}
+      {loading && <p className={styles.loading}>Загрузка...</p>}
+      {error && <p className={styles.error}>{error}</p>}
+      {!loading && !cities.length && query && <p className={styles.empty}>Города не найдены</p>}
       <CityList cities={cities} />
     </main>
   )
